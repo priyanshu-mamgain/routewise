@@ -18,7 +18,7 @@ def decide(text: str) -> dict:
     p = data["answers"]["is_complex"]["noul"]   # 0..1, 1 = complex
     return {"p_complex": p, "decider_ms": data.get("latency_ms")}
 
-def route(text: str, low=0.30, high=0.70) -> dict:
+def route(text: str, low=0.45, high=0.55) -> dict:
     d = decide(text)
     p = d["p_complex"]
     if p <= low:
